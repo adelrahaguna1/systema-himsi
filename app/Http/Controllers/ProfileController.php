@@ -6,10 +6,6 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function index()
-    {
-        return view('profile');
-    }
 
     public function edit()
     {
@@ -36,7 +32,7 @@ class ProfileController extends Controller
         $user->email = $request->email;
         $user->save();
 
-        // Redirect ke halaman profil
-        return redirect()->route('profile')->with('success', 'Profil berhasil diperbarui.');
+        // Redirect ke halaman edit
+        return redirect()->route('edit')->with('success', 'Profil berhasil diperbarui.');
     }
 }

@@ -1,0 +1,43 @@
+body {
+    background-color: #f0f8ff; /* Warna biru muda untuk latar belakang */
+    color: #000000; /* Warna teks utama */
+}
+
+.navbar {
+    background-color: #007bff; /* Warna biru untuk navbar */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #ffffff !important; /* Warna putih untuk teks navbar */
+}
+
+.footer {
+    background-color: #014288; /* Warna biru gelap untuk footer */
+    color: #f8f9fa; /* Warna putih untuk teks footer */
+}
+
+.footer h5 {
+    color: #ffc107; /* Warna kuning untuk judul di footer */
+}
+
+.footer a {
+    color: #f8f9fa; /* Warna putih untuk link di footer */
+}
+
+.footer a:hover {
+    color: #ffc107; /* Warna kuning saat hover link di footer */
+}
+
+.footer hr {
+    border-top: 1px solid #f8f9fa; /* Garis pemisah di footer */
+}
+
+.footer .social-icons a {
+    color: #000000; /* Warna putih untuk ikon sosial media */
+    margin-right: 15px;
+}
+
+.footer .social-icons a:hover {
+    color: #ffc107; /* Warna kuning saat hover ikon sosial media */
+}
