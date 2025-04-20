@@ -103,78 +103,87 @@
                     <button class="btn btn-outline-secondary px-4 py-2" style="border-radius: 20px;">MINUMAN</button>
                 </div>
             </div>
-            <div class="mt-4 row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                {{-- Produk 1: Lanyard --}}
-                <div class="col">
-                    <div class="card h-100 shadow-sm">
-                        <img src="{{ asset('images/Mockup Lanyard.jpg') }}" class="card-img-top" alt="..." style="height: 180px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title">Lanyard HIMSI</h5>
-                            <p class="card-text"><strong>Rp 14.000</strong></pE>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Detail</a>
+            <div id="pilihan-produk" class="mt-5">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                        {{-- Produk 1: Lanyard --}}
+                        <div class="col">
+                            <div class="card h-100 shadow-sm" style="border-radius: 12px;">
+                                <img src="{{ asset('images/Mockup Lanyard.jpg') }}" class="card-img-top" alt="Lanyard HIMSI" style="height: 180px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Lanyard HIMSI</h5>
+                                    <p class="card-text">Lanyard HIMSI bergaya elegan dengan warna identitas jurusan, logo HIMSI tercetak jelas, dan bahan kuat serta nyaman dipakai.</p>
+                                    <p class="card-text"><strong>Rp 14.000</strong></p>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Tambahkan</a>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- Produk 2: Keychain --}}
+                        <div class="col">
+                            <div class="card h-100 shadow-sm" style="border-radius: 12px;">
+                                <img src="{{ asset('images/Keychain.png') }}" class="card-img-top" alt="Keychain HIMSI" style="height: 180px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Keychain HIMSI</h5>
+                                    <p class="card-text">Keychain HIMSI stylish dan fungsional, jadi simbol kebanggaan anak Sistem Informasi.</p>
+                                    <p class="card-text"><strong>Rp 10.000</strong></p>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Tambahkan</a>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- Produk 3: Sticker --}}
+                        <div class="col">
+                            <div class="card h-100 shadow-sm" style="border-radius: 12px;">
+                                <img src="{{ asset('images/Stiker.png') }}" class="card-img-top" alt="Sticker HIMSI" style="height: 180px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sticker HIMSI</h5>
+                                    <p class="card-text">Stiker HIMSI dengan tampilan yang kece dan menandakan kamu bergabung ke keluarga HIMSI.</p>
+                                    <p class="card-text"><strong>Rp 5.000</strong></p>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Tambahkan</a>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- Produk 4: Ayam Suwir --}}
+                        <div class="col">
+                            <div class="card h-100 shadow-sm" style="border-radius: 12px;">
+                                <img src="{{ asset('images/Ayam Suwir.jpg') }}" class="card-img-top" alt="Ayam Suwir" style="height: 180px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Ayam Suwir Pedas</h5>
+                                    <p class="card-text">Nikmati kelezatan Ayam Suwir dengan cita rasa autentik yang kaya rempah. Siap santap, higienis, dan cocok untuk semua momen spesial Anda.</p>
+                                    <p class="card-text"><strong>Rp 15.000</strong></p>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Tambahkan</a>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- Produk 5: Ayam Katsu --}}
+                        <div class="col">
+                            <div class="card h-100 shadow-sm" style="border-radius: 12px;">
+                                <img src="{{ asset('images/chicken-katsu.jpeg') }}" class="card-img-top" alt="Ayam Katsu" style="height: 180px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Ayam Katsu Komplit</h5>
+                                    <p class="card-text">Crispy di luar, juicy di dalam! Ayam Katsu siap jadi pilihan favorit kamu—dengan balutan tepung renyah dan rasa gurih yang menggoda.</p>
+                                    <p class="card-text"><strong>Rp 15.000</strong></p>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Tambahkan</a>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- Produk 6: Pop Ice --}}
+                        <div class="col">
+                            <div class="card h-100 shadow-sm" style="border-radius: 12px;">
+                                <img src="{{ asset('images/Pop Ice.jpg') }}" class="card-img-top" alt="Pop Ice" style="height: 180px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Pop Ice Aneka Rasa</h5>
+                                    <p class="card-text">Rasakan nikmatnya air minum menyegarkan dan menghilangkan dahaga, cocok saat panas-panas gini!</p>
+                                    <p class="card-text"><strong>Rp 7.000</strong></p>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Tambahkan</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                {{-- Produk 2: Keychain --}}
-                <div class="col">
-                    <div class="card h-100 shadow-sm">
-                        <img src="{{ asset('images/Keychain.png') }}" class="card-img-top" alt="..." style="height: 180px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title">Keychain HIMSI</h5>
-                            <p class="card-text"><strong>Rp 10.000</strong></p>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Detail</a>
-                        </div>
-                    </div>
-                </div>
-                {{-- Produk 3: Sticker --}}
-                <div class="col">
-                    <div class="card h-100 shadow-sm">
-                        <img src="{{ asset('images/Stiker.png') }}" class="card-img-top" alt="..." style="height: 180px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title">Sticker HIMSI</h5>
-                            <p class="card-text"><strong>Rp 5.000</strong></p>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Detail</a>
-                        </div>
-                    </div>
-                </div>
-                {{-- Produk 4: Ayam Suwir --}}
-                <div class="col">
-                    <div class="card h-100 shadow-sm">
-                        <img src="{{ asset('images/Ayam Suwir.jpg') }}" class="card-img-top" alt="..." style="height: 180px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title">Ayam Suwir Pedas</h5>
-                            <p class="card-text"><strong>Rp 15.000</strong></p>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Detail</a>
-                        </div>
-                    </div>
-                </div>
-                {{-- Produk 5: Ayam Katsu --}}
-                <div class="col">
-                    <div class="card h-100 shadow-sm">
-                        <img src="{{ asset('images/chicken-katsu.jpeg') }}" class="card-img-top" alt="..." style="height: 180px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title">Ayam Katsu Komplit</h5>
-                            <p class="card-text"><strong>Rp 15.000</strong></p>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Detail</a>
-                        </div>
-                    </div>
-                </div>
-                {{-- Produk 6: Pop Ice --}}
-                <div class="col">
-                    <div class="card h-100 shadow-sm">
-                        <img src="{{ asset('images/Pop Ice.jpg') }}" class="card-img-top" alt="..." style="height: 180px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title">Pop Ice Aneka Rasa</h5>
-                            <p class="card-text"><strong>Rp 7.000</strong></p>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Detail</a>
-                        </div>
-                    </div>
-                </div>
-            </div> {{-- End row --}}
+            </div>
         </div>
         {{-- ================================== --}}
         {{--    AKHIR BAGIAN PILIHAN PRODUK (GRID) --}}
-{{-- ================================== --}}
+        {{-- ================================== --}}
 
 
         {{-- ================================== --}}
@@ -182,23 +191,31 @@
         {{-- ================================== --}}
         <div class="mt-5">
             <hr>
-            <h2 class="text-center mb-4">KELUARGA HIMSI</h2>
-            <div class="row align-items-center g-3"> {{-- g-3 for gutters --}}
-                {{-- Kolom Kiri (Gambar Utama) --}}
-                <div class="col-md-7">
-                    {{-- Ganti dengan path gambar utama --}}
-                    <img src="{{ asset('images/Sertijab.jpg') }}" class="img-fluid rounded shadow-sm" alt="Kegiatan HIMSI 1">
-                </div>
-                {{-- Kolom Kanan (Dua Gambar Kecil) --}}
-                <div class="col-md-5">
-                    <div class="row g-3">
-                        <div class="col-12">
-                             {{-- Ganti dengan path gambar kedua --}}
-                            <img src="{{ asset('images/Hambali.jpg') }}" class="img-fluid rounded shadow-sm" alt="Kegiatan HIMSI 2">
-                        </div>
-                        <div class="col-12">
-                             {{-- Ganti dengan path gambar ketiga --}}
-                             <img src="{{ asset('images/Simfoni.jpeg') }}" class="img-fluid rounded shadow-sm" alt="Kegiatan HIMSI 3">
+            <div class="container py-5" style="background-color: #F0EBE1; border-radius: 16px; max-width: 1100px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <div class="row align-items-center g-4">
+                    {{-- Kolom Kiri (Tentang Kami dan Penjelasan) --}}
+                    <div class="col-md-6">
+                        <span class="badge bg-danger text-white mb-2" style="font-size: 0.9rem;">TENTANG KAMI</span>
+                        <h2 class="fw-bold mb-3">KELUARGA HIMSI</h2>
+                        <p style="font-size: 1rem; color: #6c757d;">
+                            HIMSI adalah organisasi mahasiswa Sistem Informasi yang berfokus pada pengembangan potensi, aspirasi, dan kolaborasi antar mahasiswa dalam suasana yang profesional dan inovatif.
+                        </p>
+                        <a href="#" class="btn btn-outline-primary mt-3">READ MORE</a>
+                    </div>
+                    {{-- Kolom Kanan (Gambar) --}}
+                    <div class="col-md-6">
+                        <div class="row g-3">
+                            {{-- Gambar Utama --}}
+                            <div class="col-12">
+                                <img src="{{ asset('images/Sertijab.jpg') }}" class="img-fluid rounded shadow-sm" alt="Kegiatan HIMSI 1" style="height: 220px; object-fit: cover; width: 100%;">
+                            </div>
+                            {{-- Dua Gambar Kecil --}}
+                            <div class="col-6">
+                                <img src="{{ asset('images/Hambali.jpg') }}" class="img-fluid rounded shadow-sm" alt="Kegiatan HIMSI 2" style="height: 160px; object-fit: cover; width: 100%;">
+                            </div>
+                            <div class="col-6">
+                                <img src="{{ asset('images/Simfoni.jpeg') }}" class="img-fluid rounded shadow-sm" alt="Kegiatan HIMSI 3" style="height: 160px; object-fit: cover; width: 100%;">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -213,55 +230,55 @@
         {{--      AWAL BAGIAN REVIEW PRODUK     --}}
         {{-- ================================== --}}
         <div class="mt-5">
-             <hr>
-             <h2 class="text-center mb-4">REVIEW PRODUK</h2>
-             <div class="row row-cols-1 row-cols-md-3 g-4">
-                 {{-- Review 1 --}}
-                 <div class="col">
-                     <div class="card h-100 shadow-sm">
-                         <div class="card-body">
-                             <figure>
-                                 <blockquote class="blockquote">
-                                     <p>"Lanyardnya keren banget! Bahannya bagus dan desainnya oke punya. Pengiriman juga cepat."</p>
-                                 </blockquote>
-                                 <figcaption class="blockquote-footer">
-                                     Andi S. <cite title="Source Title">(Mahasiswa Teknik Informatika)</cite>
-                                 </figcaption>
-                             </figure>
-                         </div>
-                     </div>
-                 </div>
-                 {{-- Review 2 --}}
-                  <div class="col">
-                     <div class="card h-100 shadow-sm">
-                         <div class="card-body">
-                             <figure>
-                                 <blockquote class="blockquote">
-                                     <p>"Ayam katsunya juara! Porsinya pas, rasanya enak, harganya juga ramah kantong mahasiswa. Recommended!"</p>
-                                 </blockquote>
-                                 <figcaption class="blockquote-footer">
-                                     Citra W. <cite title="Source Title">(Mahasiswa Sistem Informasi)</cite>
-                                 </figcaption>
-                             </figure>
-                         </div>
-                     </div>
-                 </div>
-                 {{-- Review 3 --}}
-                  <div class="col">
-                     <div class="card h-100 shadow-sm">
-                         <div class="card-body">
-                             <figure>
-                                 <blockquote class="blockquote">
-                                     <p>"Stickernya lucu-lucu, kualitasnya juga bagus, nempel kuat di laptop. Beli banyak buat koleksi."</p>
-                                 </blockquote>
-                                 <figcaption class="blockquote-footer">
-                                     Budi P. <cite title="Source Title">(Mahasiswa Desain Grafis)</cite>
-                                 </figcaption>
-                             </figure>
-                         </div>
-                     </div>
-                 </div>
-             </div>
+            <hr>
+            <div class="container py-5" style="background-color: #F0EBE1; border-radius: 16px; max-width: 1100px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <h2 class="text-center fw-bold mb-2" style="font-size: 2rem;">REVIEW PRODUK</h2>
+                <p class="text-center mb-4" style="font-size: 1rem; color: #6c757d;">Testimoni Dari Pelanggan Kami</p>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    {{-- Review 1 --}}
+                    <div class="col">
+                        <div class="card h-100 shadow-sm" style="border-radius: 12px;">
+                            <div class="card-body text-center">
+                                <p class="fw-bold mb-1" style="font-size: 1.1rem;">Andi S.</p>
+                                <p class="text-muted mb-3" style="font-size: 0.9rem;">Mahasiswa Teknik Informatika</p>
+                                <p class="mb-3" style="font-size: 0.95rem;">"Lanyardnya keren banget! Bahannya bagus dan desainnya oke punya. Pengiriman juga cepat."</p>
+                                <div>
+                                    <span style="color: #FFD700;">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                                    <span class="text-muted" style="font-size: 0.9rem;">(4.0)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- Review 2 --}}
+                    <div class="col">
+                        <div class="card h-100 shadow-sm" style="border-radius: 12px;">
+                            <div class="card-body text-center">
+                                <p class="fw-bold mb-1" style="font-size: 1.1rem;">Citra W.</p>
+                                <p class="text-muted mb-3" style="font-size: 0.9rem;">Mahasiswa Sistem Informasi</p>
+                                <p class="mb-3" style="font-size: 0.95rem;">"Ayam katsunya juara! Porsinya pas, rasanya enak, harganya juga ramah kantong mahasiswa. Recommended!"</p>
+                                <div>
+                                    <span style="color: #FFD700;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                    <span class="text-muted" style="font-size: 0.9rem;">(5.0)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- Review 3 --}}
+                    <div class="col">
+                        <div class="card h-100 shadow-sm" style="border-radius: 12px;">
+                            <div class="card-body text-center">
+                                <p class="fw-bold mb-1" style="font-size: 1.1rem;">Budi P.</p>
+                                <p class="text-muted mb-3" style="font-size: 0.9rem;">Mahasiswa Desain Grafis</p>
+                                <p class="mb-3" style="font-size: 0.95rem;">"Stickernya lucu-lucu, kualitasnya juga bagus, nempel kuat di laptop. Beli banyak buat koleksi."</p>
+                                <div>
+                                    <span style="color: #FFD700;">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                                    <span class="text-muted" style="font-size: 0.9rem;">(4.0)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         {{-- ================================== --}}
         {{--      AKHIR BAGIAN REVIEW PRODUK    --}}
