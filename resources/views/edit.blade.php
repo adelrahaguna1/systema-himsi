@@ -24,7 +24,7 @@
                         <h3>Edit Profile</h3>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('update') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('update') }}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="mb-4">
