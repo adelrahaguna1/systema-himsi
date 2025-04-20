@@ -15,4 +15,22 @@ class ProdukController extends Controller
         // Kirim data ke view
         return view('produk.merchandise', compact('produk'));
     }
+
+    public function makanan()
+    {
+        // Ambil produk dengan kategori 'makanan'
+        $produk = Produk::where('type', 'makanan')->get();
+
+        // Kirim data ke view
+        return view('produk.makanan', compact('produk'));
+    }
+
+    public function minuman()
+    {
+        // Ambil produk dengan kategori 'minuman'
+        $produk = Produk::where('type', 'minuman')->get();
+
+        // Kirim data ke view
+        return view('produk.minuman', compact('produk'));
+    }
 }

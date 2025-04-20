@@ -9,9 +9,7 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        // Ambil produk yang ingin ditampilkan di bagian "featured"
-        $featuredProduk = Produk::take(3)->get(); // Ambil 2 produk pertama sebagai contoh
-
-        return view('welcome', compact('featuredProduk'));
+        $produk = Produk::all(); // Ambil semua produk dari database
+        return view('welcome', compact('produk'));
     }
 }

@@ -28,6 +28,8 @@ Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('edit');
 Route::get('/profile/update', [ProfileController::class, 'update'])->name('update');
 
 Route::get('/produk/merchandise', [ProdukController::class, 'merchandise'])->name('produk.merchandise');
+Route::get('/produk/makanan', [ProdukController::class, 'makanan'])->name('produk.makanan');
+Route::get('/produk/minuman', [ProdukController::class, 'minuman'])->name('produk.minuman');
 
 Route::middleware(['auth', 'is_admin'])
     ->prefix('admin') // URL jadi /admin/...
