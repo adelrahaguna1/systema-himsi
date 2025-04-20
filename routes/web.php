@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\ProdukController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,6 +26,8 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('edit');
 Route::get('/profile/update', [ProfileController::class, 'update'])->name('update');
+
+Route::get('/produk/merchandise', [ProdukController::class, 'merchandise'])->name('produk.merchandise');
 
 Route::middleware(['auth', 'is_admin'])
     ->prefix('admin') // URL jadi /admin/...

@@ -31,7 +31,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="produkDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Produk</a>
                             <ul class="dropdown-menu" aria-labelledby="produkDropdown">
-                                <li><a class="dropdown-item" href="#">Merchandise</a></li>
+                                <li><a class="dropdown-item" href="{{ route('produk.merchandise') }}">Merchandise</a></li>
                                 <li><a class="dropdown-item" href="#">Makanan</a></li>
                                 <li><a class="dropdown-item" href="#">Minuman</a></li>
                             </ul>
