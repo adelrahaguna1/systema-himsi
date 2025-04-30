@@ -7,21 +7,25 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\ProdukController;
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $products = \App\Models\Produk::all(); // Fetch all products
+    return view('welcome', compact('products')); // Pass products to the view
+})->name('home');
 
-// Rute untuk Autentikasi (Manual)
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login'); // Menampilkan form login
-Route::post('/login', [AuthController::class, 'login']); // Memproses data dari form login
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login'); // Show login form
+Route::post('/login', [AuthController::class, 'login']); // Process login form
 
-Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register'); // Menampilkan form register
-Route::post('/register', [AuthController::class, 'register']); // Memproses data dari form register
+Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register'); // Show registration form
+Route::post('/register', [AuthController::class, 'register']); // Process registration form
 
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout'); // Memproses logout
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout'); // Process logout
 
-// Contoh Rute yang Dilindungi (hanya bisa diakses setelah login)
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', function () {
+        $products = \App\Models\Produk::all(); // Fetch all products
+        return view('dashboard', compact('products')); // Pass products to the view
+    })->name('dashboard');
+
+    Route::post('/reviews', [\App\Http\Controllers\ReviewController::class, 'store'])->name('reviews.store');
 });
 
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('edit');
@@ -32,20 +36,12 @@ Route::get('/produk/makanan', [ProdukController::class, 'makanan'])->name('produ
 Route::get('/produk/minuman', [ProdukController::class, 'minuman'])->name('produk.minuman');
 
 Route::middleware(['auth', 'is_admin'])
-    ->prefix('admin') // URL jadi /admin/...
-    ->name('admin.')   // Nama rute diawali admin.
+    ->prefix('admin') // URL prefix for admin routes
+    ->name('admin.')  // Route name prefix
     ->group(function () {
+        Route::get('/dashboard', function () {
+            return view('admin.dashboard'); // Render the admin dashboard view
+        })->name('dashboard');
 
-        // ---> PASTIKAN RUTE INI ADA DI DALAM GRUP <---
-        Route::get('/dashboard', function() {
-            // View 'admin.dashboard' belum kita buat, jadi return teks dulu
-            return 'Ini Halaman Dashboard Admin (View belum dibuat)';
-        })->name('dashboard'); // Ini akan membuat nama rute 'admin.dashboard'
-        // ----------------------------------------------------
-
-        // Rute resource untuk produk
-        Route::resource('products', ProductController::class);
-
-        // Rute admin lain bisa ditambah di sini
-
-}); // Akhir grup admin
+        Route::resource('products', ProductController::class); // Resource route for managing products
+    });
