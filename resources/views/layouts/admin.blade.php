@@ -8,82 +8,61 @@
     <title>@yield('title', 'Admin Panel - Systema HIMSI')</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: #ffffff;
-            font-family: 'Poppins', sans-serif;
+            background: #f0f8ff; /* AliceBlue */
+            color: #212529;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .navbar {
-            background: rgba(0, 0, 50, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 2px solid #2a5298;
+            background: #007bff; /* Bootstrap Primary Blue */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .navbar-brand {
-            font-size: 1.5rem;
-            color: #00d4ff !important;
-            text-shadow: 0 0 10px #00d4ff;
+        .navbar-nav {
+            display: flex;
+            align-items: center;
         }
 
-        .nav-link {
+        .navbar-brand, .nav-link {
             color: #ffffff !important;
-            transition: color 0.3s ease-in-out;
+            font-weight: 500;
         }
 
-        .nav-link:hover {
-            color: #00d4ff !important;
-        }
-
-        .alert {
-            background: rgba(0, 255, 255, 0.1);
-            border: 1px solid #00d4ff;
-            color: #00d4ff;
+        .navbar-brand:hover, .nav-link:hover {
+            color: #d4e9ff !important; /* Lighter Blue */
         }
 
         footer {
-            background: rgba(0, 0, 50, 0.9);
-            border-top: 2px solid #2a5298;
+            background: #007bff;
+            color: #ffffff;
+            padding: 15px 0;
         }
 
         footer p {
-            color: #00d4ff;
-            text-shadow: 0 0 5px #00d4ff;
+            margin: 0;
+            font-size: 14px;
         }
 
         .container {
-            animation: fadeIn 1.5s ease-in-out;
+            margin-top: 5px;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .btn-close {
-            filter: brightness(0) invert(1);
-        }
-
-        .btn-close:hover {
-            filter: brightness(0.5) invert(1);
+        .alert {
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
     <div id="app">
         {{-- Admin Navbar --}}
-        <nav class="navbar navbar-expand-md shadow-sm">
+        <nav class="navbar navbar-expand-md shadow-sm justify-content-center align-items-center">
             <div class="container">
-                <a class="navbar-brand fw-bold" href="{{ route('admin.dashboard') }}">
-                    Admin Panel - Systema HIMSI
+                <a class="navbar-brand" href="{{ route('admin.dashboard') }}">
+                    Admin Panel
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -114,23 +93,18 @@
         </nav>
 
         @if (session('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <div class="alert alert-success mt-3 container" role="alert">
                 {{ session('success') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
 
-        <main class="py-4">
-            <div class="container">
-                @yield('content')
-            </div>
+        <main class="container">
+            @yield('content')
         </main>
 
         {{-- Admin Footer --}}
-        <footer class="footer py-3 mt-auto">
-            <div class="container text-center">
-                <p class="mb-0 small">Copyright &copy; {{ date('Y') }} Systema HIMSI. All Rights Reserved.</p>
-            </div>
+        <footer class="text-center mt-4">
+            <p>&copy; {{ date('Y') }} Systema HIMSI. All Rights Reserved.</p>
         </footer>
     </div>
 
