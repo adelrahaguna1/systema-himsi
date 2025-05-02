@@ -104,7 +104,7 @@
                         <h5 class="text-uppercase mb-4 fw-bold text-warning">Navigasi</h5>
                         <ul class="list-unstyled mb-0">
                             <li class="mb-2"> <a href="{{route('about')}}" class="text-white text-decoration-none">Tentang Kami</a> </li>
-                            <li class="mb-2"> <a href="#" class="text-white text-decoration-none">Kontak</a> </li>
+                            <li class="mb-2"> <a href="{{route('kontak')}}" class="text-white text-decoration-none">Kontak</a> </li>
                             <li class="mb-2"> <a href="{{ route('login') }}" class="text-white text-decoration-none">Login Member</a> </li>
                             <li class="mb-2"> <a href="{{ route('register') }}" class="text-white text-decoration-none">Register Member</a> </li>
                         </ul>
