@@ -17,5 +17,9 @@ class HomeController extends Controller
     {
         return view('about'); // Render the about view
     }
+    public function kontak()
+    {
+        return view('kontak'); // Asumsi nama view Anda adalah 'kontak.blade.php'
+    }
 
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\HomeController;
 
+
 Route::get('/', function () {
     $products = \App\Models\Produk::all(); // Fetch all products
     return view('welcome', compact('products')); // Pass products to the view
@@ -33,6 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/produk/minuman', [ProdukController::class, 'minuman'])->name('produk.minuman');
     Route::get('/produk/detail', [ProdukController::class, 'showDetail'])->name('produk.detail');
     Route::post('/reviews', [\App\Http\Controllers\ReviewController::class, 'store'])->name('reviews.store');
+    Route::get('/kontak',[HomeController::class, 'kontak'])->name('kontak'); 
 });
 
 

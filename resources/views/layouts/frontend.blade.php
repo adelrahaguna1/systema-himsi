@@ -37,7 +37,7 @@
                             </ul>
                         </li>
                         <li class="nav-item"> <a class="nav-link" href="#">Review</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#">Kontak</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="{{route('kontak')}}">Kontak</a> </li>
 
                         @guest
                             <li class="nav-item">
