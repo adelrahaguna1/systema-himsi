@@ -51,7 +51,7 @@
                     <p style="font-size: 1rem; color: #6c757d;">
                         HIMSI adalah organisasi mahasiswa Sistem Informasi yang berfokus pada pengembangan potensi, aspirasi, dan kolaborasi antar mahasiswa dalam suasana yang profesional dan inovatif.
                     </p>
-                    <a href="#" class="btn btn-outline-primary mt-3">READ MORE</a>
+                    <a href="{{route('about')}}" class="btn btn-outline-primary mt-3">READ MORE</a>
                 </div>
                 <div class="col-md-6">
                     <div class="row g-3">
