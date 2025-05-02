@@ -51,15 +51,17 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'type' => 'required|string',
-            'price' => 'required|numeric',
-            'stock' => 'required|integer',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'type' => 'required|string|max:255',
+            'price' => 'required|numeric|max:999999999',
+            'stock' => 'required|integer|max:999999',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:999999999',
         ]);
 
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('produk', 'public');
             $product->image = $imagePath;
+            $product->save();
+            session()->flash('success', 'Gambar produk berhasil diperbarui.');
         }
 
         $product->update([
