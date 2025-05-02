@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/produk/detail', [ProdukController::class, 'showDetail'])->name('produk.detail');
     Route::post('/reviews', [\App\Http\Controllers\ReviewController::class, 'store'])->name('reviews.store');
     Route::get('/kontak',[HomeController::class, 'kontak'])->name('kontak'); 
+    Route::post('/kontak/kirim', [HomeController::class, 'kirimPesan'])->name('kontak.kirim'); // Rute untuk mengirim pesan
 });
 
 

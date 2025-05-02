@@ -5,6 +5,29 @@
 @section('content')
 <div class="container my-5" style="font-family: 'Montserrat', sans-serif; font-weight: 400; letter-spacing: 0.01em;">
     <h1>Kontak Kami</h1>
+
+    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="errorModalLabel">Oops! Ada Kesalahan</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                </div>
+                <div class="modal-body">
+                    Harap isi **Nama**, **Email**, dan **Pesan** dengan benar. Silakan periksa kembali formulir di bawah ini.
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-md-6">
             <div class="card shadow-sm">
@@ -34,22 +57,35 @@
             <div class="card shadow-sm">
                 <div class="card-body">
                     <h5 class="card-title" style="font-weight: 500;">Hubungi Kami</h5>
-                    <form>
+                    <form action="{{ route('kontak.kirim') }}" method="POST">
+                        @csrf
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama</label>
-                            <input type="text" class="form-control" id="nama" placeholder="Nama Anda" style="font-weight: 400;">
+                            <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" placeholder="Nama Anda" style="font-weight: 400;" value="{{ old('nama') }}">
+                            @error('nama')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Alamat Email Anda" style="font-weight: 400;">
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Alamat Email Anda" style="font-weight: 400;" value="{{ old('email') }}">
+                            @error('email')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="no_hp" class="form-label">No. HP</label>
-                            <input type="text" class="form-control" id="no_hp" placeholder="Nomor Telepon Anda" style="font-weight: 400;">
+                            <label for="no_hp" class="form-label">No. HP (Opsional)</label>
+                            <input type="text" class="form-control @error('no_hp') is-invalid @enderror" id="no_hp" name="no_hp" placeholder="Nomor Telepon Anda" style="font-weight: 400;" value="{{ old('no_hp') }}">
+                            @error('no_hp')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="pesan" class="form-label">Pesan</label>
-                            <textarea class="form-control" id="pesan" rows="4" placeholder="Pesan Anda" style="font-weight: 400;"></textarea>
+                            <textarea class="form-control @error('pesan') is-invalid @enderror" id="pesan" name="pesan" rows="4" placeholder="Pesan Anda" style="font-weight: 400;">{{ old('pesan') }}</textarea>
+                            @error('pesan')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                         <button type="submit" class="btn btn-primary" style="font-weight: 500;">Kirim Pesan</button>
                     </form>
@@ -67,3 +103,25 @@
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 </style>
 @endsection
+
+<script>
+    $(document).ready(function() {
+        @if (session('success'))
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: '{{ session('success') }}',
+                confirmButtonText: 'Tutup'
+            });
+        @endif
+
+        @if ($errors->any())
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Harap isi Nama, Email, dan Pesan dengan benar. Periksa kembali formulir di bawah ini.',
+                confirmButtonText: 'Tutup'
+            });
+        @endif
+    });
+</script>
