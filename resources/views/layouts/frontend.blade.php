@@ -27,7 +27,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"> <a class="nav-link" href="{{ url('/') }}">Home</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#">Tentang Kami</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="{{route('about')}}">Tentang Kami</a> </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="produkDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Produk</a>
                             <ul class="dropdown-menu" aria-labelledby="produkDropdown">
@@ -103,7 +103,7 @@
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                         <h5 class="text-uppercase mb-4 fw-bold text-warning">Navigasi</h5>
                         <ul class="list-unstyled mb-0">
-                            <li class="mb-2"> <a href="#" class="text-white text-decoration-none">Tentang Kami</a> </li>
+                            <li class="mb-2"> <a href="{{route('about')}}" class="text-white text-decoration-none">Tentang Kami</a> </li>
                             <li class="mb-2"> <a href="#" class="text-white text-decoration-none">Kontak</a> </li>
                             <li class="mb-2"> <a href="{{ route('login') }}" class="text-white text-decoration-none">Login Member</a> </li>
                             <li class="mb-2"> <a href="{{ route('register') }}" class="text-white text-decoration-none">Register Member</a> </li>

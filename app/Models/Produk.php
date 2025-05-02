@@ -9,6 +9,10 @@ class Produk extends Model
 {
     use HasFactory;
 
-    protected $table = 'produk'; // Specify the table name
-    protected $fillable = ['name', 'type', 'price', 'stock', 'image']; // Mass assignable fields
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name', 'type', 'price', 'stock', 'description' ,'image'];
 }

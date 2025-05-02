@@ -9,11 +9,78 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 50, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #2a5298;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            color: #00d4ff !important;
+            text-shadow: 0 0 10px #00d4ff;
+        }
+
+        .nav-link {
+            color: #ffffff !important;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-link:hover {
+            color: #00d4ff !important;
+        }
+
+        .alert {
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid #00d4ff;
+            color: #00d4ff;
+        }
+
+        footer {
+            background: rgba(0, 0, 50, 0.9);
+            border-top: 2px solid #2a5298;
+        }
+
+        footer p {
+            color: #00d4ff;
+            text-shadow: 0 0 5px #00d4ff;
+        }
+
+        .container {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn-close {
+            filter: brightness(0) invert(1);
+        }
+
+        .btn-close:hover {
+            filter: brightness(0.5) invert(1);
+        }
+    </style>
 </head>
 <body>
     <div id="app">
         {{-- Admin Navbar --}}
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+        <nav class="navbar navbar-expand-md shadow-sm">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="{{ route('admin.dashboard') }}">
                     Admin Panel - Systema HIMSI
@@ -60,7 +127,7 @@
         </main>
 
         {{-- Admin Footer --}}
-        <footer class="footer bg-dark text-white py-3 mt-auto">
+        <footer class="footer py-3 mt-auto">
             <div class="container text-center">
                 <p class="mb-0 small">Copyright &copy; {{ date('Y') }} Systema HIMSI. All Rights Reserved.</p>
             </div>

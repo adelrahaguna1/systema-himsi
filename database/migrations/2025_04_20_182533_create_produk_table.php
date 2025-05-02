@@ -15,7 +15,9 @@ class CreateProdukTable extends Migration
             $table->decimal('price', 8, 2);
             $table->string('image')->nullable();
             $table->integer('stock')->default(0);
+            $table->string('description')->nullable();
             $table->timestamps();
+
         });
     }
 

@@ -12,4 +12,10 @@ class HomeController extends Controller
         $products = Produk::all(); // Fetch all products from the database
         return view('dashboard', compact('products'));
     }
+
+    public function about()
+    {
+        return view('about'); // Render the about view
+    }
+
 }

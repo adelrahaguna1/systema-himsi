@@ -13,8 +13,9 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $item->name }}</h5>
                         <p class="card-text"><strong>Rp {{ number_format($item->price, 0, ',', '.') }}</strong></p>
+                        <p class="card-text">{{ $item->description }}</p>
                         <p class="card-text">Stok: {{ $item->stock }}</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Detail</a>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Tambahkan</a>
                     </div>
                 </div>
             </div>

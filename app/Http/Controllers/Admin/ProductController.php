@@ -26,7 +26,8 @@ class ProductController extends Controller
             'type' => 'required|string',
             'price' => 'required|numeric',
             'stock' => 'required|integer',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:999999999',
+            'description' => 'required|string|max:999999999',
         ]);
 
         $imagePath = $request->file('image') ? $request->file('image')->store('produk', 'public') : 'default-product.png';
@@ -37,6 +38,7 @@ class ProductController extends Controller
             'price' => $request->price,
             'stock' => $request->stock,
             'image' => $imagePath,
+            'description' => $request->description,
         ]);
 
         return redirect()->route('admin.products.index')->with('success', 'Produk berhasil ditambahkan.');
@@ -55,6 +57,7 @@ class ProductController extends Controller
             'price' => 'required|numeric|max:999999999',
             'stock' => 'required|integer|max:999999',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:999999999',
+            'description' => 'required|string|max:999999999',
         ]);
 
         if ($request->hasFile('image')) {
@@ -69,6 +72,7 @@ class ProductController extends Controller
             'type' => $request->type,
             'price' => $request->price,
             'stock' => $request->stock,
+            'description' => $request->description,
         ]);
 
         return redirect()->route('admin.products.index')->with('success', 'Produk berhasil diperbarui.');

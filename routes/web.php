@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     $products = \App\Models\Produk::all(); // Fetch all products
@@ -24,17 +25,18 @@ Route::middleware('auth')->group(function () {
         $products = \App\Models\Produk::all(); // Fetch all products
         return view('dashboard', compact('products')); // Pass products to the view
     })->name('dashboard');
-
+    Route::get('/about',[HomeController::class, 'about'])->name('about'); // Show about page
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('edit');
+    Route::get('/profile/update', [ProfileController::class, 'update'])->name('update');
+    Route::get('/produk/merchandise', [ProdukController::class, 'merchandise'])->name('produk.merchandise');
+    Route::get('/produk/makanan', [ProdukController::class, 'makanan'])->name('produk.makanan');
+    Route::get('/produk/minuman', [ProdukController::class, 'minuman'])->name('produk.minuman');
+    Route::get('/produk/detail', [ProdukController::class, 'showDetail'])->name('produk.detail');
     Route::post('/reviews', [\App\Http\Controllers\ReviewController::class, 'store'])->name('reviews.store');
 });
 
-Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('edit');
-Route::get('/profile/update', [ProfileController::class, 'update'])->name('update');
 
-Route::get('/produk/merchandise', [ProdukController::class, 'merchandise'])->name('produk.merchandise');
-Route::get('/produk/makanan', [ProdukController::class, 'makanan'])->name('produk.makanan');
-Route::get('/produk/minuman', [ProdukController::class, 'minuman'])->name('produk.minuman');
-
+ // Show product detail
 Route::middleware(['auth', 'is_admin'])
     ->prefix('admin') // URL prefix for admin routes
     ->name('admin.')  // Route name prefix

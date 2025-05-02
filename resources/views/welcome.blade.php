@@ -18,7 +18,7 @@
     {{-- PRODUK SECTION --}}
     <div id="produk" class="container mt-5">
         <div class="p-4" style="background-color: #F0EBE1; border: 2px solid #E0E0E0; border-radius: 16px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-            <h2 class="text-center fw-bold mb-4">PRODUK</h2>
+            <h2 class="text-center fw-bold mb-4">PRODUK KAMI</h2>
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 @forelse ($products as $product)
                     <div class="col">
@@ -26,15 +26,16 @@
                             <img src="{{ $product->image ? asset('storage/' . $product->image) : asset('images/default-product.png') }}" class="card-img-top" alt="{{ $product->name }}" style="height: 200px; object-fit: cover;">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $product->name }}</h5>
-                                <p class="card-text">{{ $product->description ?? 'Deskripsi tidak tersedia.' }}</p>
                                 <p class="card-text"><strong>Rp {{ number_format($product->price, 0, ',', '.') }}</strong></p>
-                                <a href="#" class="btn btn-sm btn-outline-primary">Tambahkan</a>
                             </div>
                         </div>
                     </div>
                 @empty
                     <p class="text-center">Belum ada produk yang tersedia.</p>
                 @endforelse
+            </div>
+            <div class="text-center mt-4">
+                <a href="{{ route('produk.detail')}}" class="btn btn-sm btn-outline-primary" style="font-size: 1.25rem; font-weight: bold;">Detail Produk</a>
             </div>
         </div>
     </div>

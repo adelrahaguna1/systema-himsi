@@ -10,7 +10,7 @@
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6);"></div>
         <div class="container text-center" style="position: relative; z-index: 1;">
             <h1 class="display-4 fw-bold">SYSTEMA HIMSI</h1>
-            <p class="lead">Temukan produk menarik seperti merchandise, makanan, dan minuman di Systema HIMSI.</p>
+            <p class="lead">Platform digital karya mahasiswa Sistem Informasi Telkom University Jakarta. Temukan produk menarik seperti merchandise, makanan, dan minuman.</p>
             <a href="#produk" class="btn btn-warning btn-lg mt-3">Lihat Produk</a>
         </div>
     </div>
@@ -26,15 +26,16 @@
                             <img src="{{ $product->image ? asset('storage/' . $product->image) : asset('images/default-product.png') }}" class="card-img-top" alt="{{ $product->name }}" style="height: 200px; object-fit: cover;">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $product->name }}</h5>
-                                <p class="card-text">{{ $product->description ?? 'Deskripsi tidak tersedia.' }}</p>
                                 <p class="card-text"><strong>Rp {{ number_format($product->price, 0, ',', '.') }}</strong></p>
-                                <a href="#" class="btn btn-sm btn-outline-primary">Tambahkan</a>
                             </div>
                         </div>
                     </div>
                 @empty
                     <p class="text-center">Belum ada produk yang tersedia.</p>
                 @endforelse
+            </div>
+            <div class="text-center mt-4">
+                <a href="{{ route('produk.detail')}}" class="btn btn-sm btn-outline-primary" style="font-size: 1.25rem; font-weight: bold;">Detail Produk</a>
             </div>
         </div>
     </div>
