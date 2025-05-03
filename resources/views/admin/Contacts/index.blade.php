@@ -1,32 +1,38 @@
-@extends('layouts.admin') {{-- Asumsi Anda menggunakan layout admin dengan nama 'layouts.admin' --}}
+@extends('layouts.admin')
+
+@section('title', 'Detail Pesan Kontak') {{-- Tambahkan title jika belum ada --}}
 
 @section('content')
-    <h1>Daftar Pesan Kontak</h1>
+<div class="container mt-5">
+    <h1 class="text-center mb-4 text-primary">Detail Pesan Kontak</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>No. HP</th>
-                <th>Pesan</th>
-                <th>Tanggal Kirim</th>
-            </tr>
-        </thead>
-        <tbody>
-            @forelse ($contacts as $contact)
+    <div class="table-responsive">
+        <table class="table table-hover table-striped">
+            <thead>
                 <tr>
-                    <td>{{ $contact->nama }}</td>
-                    <td>{{ $contact->email }}</td>
-                    <td>{{ $contact->no_hp ?? '-' }}</td>
-                    <td>{{ $contact->pesan }}</td>
-                    <td>{{ $contact->created_at }}</td>
+                    <th class="p-2">Nama</th>
+                    <th class="p-2">Email</th>
+                    <th class="p-2">No. HP</th>
+                    <th class="p-2">Pesan</th>
+                    <th class="p-2">Tanggal Kirim</th>
                 </tr>
-            @empty
-                <tr>
-                    <td colspan="5">Tidak ada pesan kontak.</td>
-                </tr>
-            @endforelse
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @forelse ($contacts as $contact)
+                    <tr>
+                        <td class="p-2">{{ $contact->nama }}</td>
+                        <td class="p-2">{{ $contact->email }}</td>
+                        <td class="p-2">{{ $contact->no_hp ?? '-' }}</td>
+                        <td class="p-2">{{ $contact->pesan }}</td>
+                        <td class="p-2">{{ $contact->created_at }}</td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="5" class="p-2">Tidak ada pesan kontak.</td>
+                    </tr>
+                @endforelse
+            </tbody>
+        </table>
+    </div>
+</div>
 @endsection
