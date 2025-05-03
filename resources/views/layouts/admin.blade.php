@@ -79,6 +79,9 @@
                             <a class="nav-link" href="{{ route('admin.products.index') }}">Kelola Produk</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.contacts.index') }}">Pesan Kontak</a> {{-- Link Pesan Kontak --}}
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}"
                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 Logout

@@ -6,7 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\Admin\ContactController; // Tambahkan import untuk ContactController
 
 Route::get('/', function () {
     $products = \App\Models\Produk::all(); // Fetch all products
@@ -50,4 +50,7 @@ Route::middleware(['auth', 'is_admin'])
         })->name('dashboard');
 
         Route::resource('products', ProductController::class); // Resource route for managing products
+
+        // Route untuk menampilkan daftar pesan kontak
+        Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
     });
