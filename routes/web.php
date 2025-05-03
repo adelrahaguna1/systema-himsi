@@ -34,7 +34,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/produk/minuman', [ProdukController::class, 'minuman'])->name('produk.minuman');
     Route::get('/produk/detail', [ProdukController::class, 'showDetail'])->name('produk.detail');
     Route::post('/reviews', [\App\Http\Controllers\ReviewController::class, 'store'])->name('reviews.store');
-    Route::get('/kontak',[HomeController::class, 'kontak'])->name('kontak'); 
+    Route::get('/kontak',[HomeController::class, 'kontak'])->name('kontak');
+    // Route untuk mengirim pesan kontak
+    Route::post('/kontak/kirim', [HomeController::class, 'storeKontak'])->name('kontak.store');
 });
 
 

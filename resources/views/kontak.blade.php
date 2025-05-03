@@ -5,6 +5,13 @@
 @section('content')
 <div class="container my-5" style="font-family: 'Montserrat', sans-serif; font-weight: 400; letter-spacing: 0.01em;">
     <h1>Kontak Kami</h1>
+
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <div class="row">
         <div class="col-md-6">
             <div class="card shadow-sm">
@@ -34,22 +41,23 @@
             <div class="card shadow-sm">
                 <div class="card-body">
                     <h5 class="card-title" style="font-weight: 500;">Hubungi Kami</h5>
-                    <form>
+                    <form action="{{ route('kontak.store') }}" method="POST">
+                        @csrf
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama</label>
-                            <input type="text" class="form-control" id="nama" placeholder="Nama Anda" style="font-weight: 400;">
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Anda" style="font-weight: 400;">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Alamat Email Anda" style="font-weight: 400;">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Alamat Email Anda" style="font-weight: 400;">
                         </div>
                         <div class="mb-3">
                             <label for="no_hp" class="form-label">No. HP</label>
-                            <input type="text" class="form-control" id="no_hp" placeholder="Nomor Telepon Anda" style="font-weight: 400;">
+                            <input type="text" class="form-control" id="no_hp" name="no_hp" placeholder="Nomor Telepon Anda" style="font-weight: 400;">
                         </div>
                         <div class="mb-3">
                             <label for="pesan" class="form-label">Pesan</label>
-                            <textarea class="form-control" id="pesan" rows="4" placeholder="Pesan Anda" style="font-weight: 400;"></textarea>
+                            <textarea class="form-control" id="pesan" name="pesan" rows="4" placeholder="Pesan Anda" style="font-weight: 400;"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" style="font-weight: 500;">Kirim Pesan</button>
                     </form>
