@@ -6,7 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\Admin\ContactController; // Tambahkan import untuk ContactController
 
 Route::get('/', function () {
     $products = \App\Models\Produk::all(); // Fetch all products
@@ -34,7 +34,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/produk/minuman', [ProdukController::class, 'minuman'])->name('produk.minuman');
     Route::get('/produk/detail', [ProdukController::class, 'showDetail'])->name('produk.detail');
     Route::post('/reviews', [\App\Http\Controllers\ReviewController::class, 'store'])->name('reviews.store');
-    Route::get('/kontak',[HomeController::class, 'kontak'])->name('kontak'); 
+    Route::get('/kontak',[HomeController::class, 'kontak'])->name('kontak');
+    // Route untuk mengirim pesan kontak
+    Route::post('/kontak/kirim', [HomeController::class, 'storeKontak'])->name('kontak.store');
 });
 
 
@@ -48,4 +50,7 @@ Route::middleware(['auth', 'is_admin'])
         })->name('dashboard');
 
         Route::resource('products', ProductController::class); // Resource route for managing products
+
+        // Route untuk menampilkan daftar pesan kontak
+        Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
     });
